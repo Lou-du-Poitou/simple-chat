@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lou du Poitou - Chat</title>
+    <link rel="stylesheet" href="./client/src/index.css"/>
+    <link rel="stylesheet" href="./client/src/others/fontawesome.css"/>
+    <meta name="description" content="Simple chat en ligne"/>
+    <meta name="author" content="V / Lou du Poitou"/>
+    <meta name="theme-color" content="#00ab00"/>
+</head>
+<body>
+    <header>
+        <form id="submit">
+            <input 
+                id="pseudo"
+                type="text" 
+                title="Entrez votre pseudo" 
+                placeholder="Votre pseudo..."
+                autocomplete="off"
+            />
+            <textarea 
+                id="message"
+                title="Écrivez un message"
+                autocomplete="off"
+            ></textarea>
+            <button 
+                type="submit" 
+                title="Envoyez votre message"
+            >Envoyer</button>
+        </form>
+    </header>
+    <script type="module" src="./client/src/others/md-block.js"></script>
+    <script src="./client/src/others/socket.io.js"></script>
+    <script src="./client/src/index.js"></script>
+</body>
+</html>
