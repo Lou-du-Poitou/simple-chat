@@ -32,6 +32,6 @@ def sendMessage(json):
         return socketio.emit("message", json)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, host="0.0.0.0")
+    app.run(debug=False, port=5000, host="0.0.0.0")
     # httpserver = WSGIServer(listener=("", 10000), application=app)
     # httpserver.serve_forever()
