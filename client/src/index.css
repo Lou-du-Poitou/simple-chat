@@ -1,0 +1,118 @@
+:root {
+    --grey: #666d6d;
+    --green: #00ab00;
+    --red: #ab0000;
+    --blue: #0000ab;
+    --black: #011010;
+    --white: #feefef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    resize: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    outline: none;
+}
+
+body {
+    color: var(--black);
+    background-color: var(--white);
+    font-weight: 500;
+    min-width: 280px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 100%;
+    box-shadow: 0 0 15px 2px var(--grey);
+    background-color: var(--green);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+form {
+    display: grid;
+    min-width: 245px;
+}
+
+input, textarea, button {
+    margin: 4px;
+    padding: 5px;
+    border-radius: 5px;
+    border: solid 2px var(--green);
+}
+
+input:focus, textarea:focus, button:active {
+    border: solid 2px var(--grey);
+}
+
+button {
+    cursor: pointer;
+    transition: 1ms;
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.message-box {
+    margin: 10px;
+    padding: 8px;
+    white-space: pre-wrap;
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    word-wrap: break-word;
+    border: solid 2px var(--black);
+    border-radius: 8px;
+    background-color: var(--grey);
+}
+
+.pseudo {
+    color: var(--red);
+    font-weight: 700;
+    font-style: italic;
+}
+
+.content {
+    margin: 15px 5px;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+}
+
+.id {
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 0.5rem;
+    cursor: pointer;
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    user-select: all;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    padding: 3px;
+    border: solid 2px var(--blue);
+    border-radius: 8px;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+::selection {
+    color: var(--black);
+    background-color: var(--green);
+}
