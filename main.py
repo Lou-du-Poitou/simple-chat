@@ -33,5 +33,5 @@ def sendMessage(json):
 
 if __name__ == "__main__":
     # app.run(debug=True, port=5000)
-    httpserver = WSGIServer(listener=("", 80), application=app)
+    httpserver = WSGIServer(listener=("", 10000), application=app)
     httpserver.serve_forever()
