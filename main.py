@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_limiter import Limiter, util
 from flask_socketio import SocketIO
 
-# from gevent.pywsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 
 app = Flask(import_name=__name__, static_folder="./client/")
 
@@ -32,6 +32,6 @@ def sendMessage(json):
         return socketio.emit("message", json)
 
 if __name__ == "__main__":
-    app.run(debug=False, port=5000, host="0.0.0.0")
-    # httpserver = WSGIServer(listener=("", 10000), application=app)
-    # httpserver.serve_forever()
+    # app.run(debug=False, port=5000, host="0.0.0.0")
+    httpserver = WSGIServer(listener=("", 10000), application=app)
+    httpserver.serve_forever()
