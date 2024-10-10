@@ -23,6 +23,7 @@ if (!localStorage.getItem("pseudo")) {
 const formSubmit = document.querySelector("#submit");
 const pseudoInput = document.querySelector("#pseudo");
 const messageTextarea = document.querySelector("#message");
+const thread = document.querySelector("main");
 
 pseudoInput.value = localStorage.getItem("pseudo");
 pseudoInput.addEventListener("change", (e) => {
@@ -30,7 +31,7 @@ pseudoInput.addEventListener("change", (e) => {
 });
 
 (function () {
-    const socket = io.connect(`https://${document.domain}:${location.port}`, {
+    const socket = io.connect(`http://${document.domain}:${location.port}`, {
         forceNew: true,
         transports: ["polling"]
     });
@@ -55,6 +56,13 @@ pseudoInput.addEventListener("change", (e) => {
         const messageBox = document.createElement("div");
         messageBox.className = "message-box";
         messageBox.innerHTML = `<center class="pseudo">${data.pseudo.encodeHTML() || "User"}</center><md-block class="content">${data.message.encodeHTML()}</md-block><center class="id">${data.userID.encodeHTML()}</center>`;
-        document.body.append(messageBox);
+        thread.append(messageBox);
+        setTimeout(() => {
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 0);
+
+        if (thread.children.length >= 100) {
+            thread.firstChild.remove();
+        }
     });
 }());
