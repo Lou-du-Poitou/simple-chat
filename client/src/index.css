@@ -114,6 +114,7 @@ code {
     border-radius: 8px;
     background-color: var(--black);
     color: var(--white);
+    display: block;
 }
 
 ::selection {
