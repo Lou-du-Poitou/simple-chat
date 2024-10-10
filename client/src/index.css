@@ -24,10 +24,9 @@ body {
 }
 
 header {
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    position: sticky;
+    top: 0;
     height: 150px;
     width: 100%;
     box-shadow: 0 0 15px 2px var(--grey);
@@ -39,7 +38,11 @@ header {
 
 form {
     display: grid;
+    width: 30%;
     min-width: 245px;
+    max-width: 500px;
+    justify-self: center;
+    margin: 5px;
 }
 
 input, textarea, button {
