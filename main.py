@@ -20,7 +20,7 @@ limiter = Limiter(key_func=getAddress, app=app, default_limits=["500 per hours"]
 def sendIndex():
     return send_file("./client/index.html")
 
-socketio = SocketIO(app=app, cors_allowed_origins="*")
+socketio = SocketIO(app=app, cors_allowed_origins="*", ping_timeout=5, ping_interval=5)
 
 @socketio.event()
 def connect():
