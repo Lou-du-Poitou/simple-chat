@@ -31,7 +31,7 @@ pseudoInput.addEventListener("change", (e) => {
 });
 
 (function () {
-    const socket = io.connect(`https://${document.domain}:${location.port}`, {
+    const socket = io.connect(`${location.protocol}://${document.domain}:${location.port}`, {
         forceNew: true,
         transports: ["polling"]
     });
