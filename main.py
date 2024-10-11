@@ -1,20 +1,20 @@
 from flask import Flask, send_file, request
-# from flask_cors import CORS
-# from flask_limiter import Limiter, util
+from flask_cors import CORS
+from flask_limiter import Limiter, util
 from flask_socketio import SocketIO
 
 from gevent.pywsgi import WSGIServer
 
 app = Flask(import_name=__name__, static_folder="./client/")
 
-# def getAddress():
-#     try:
-#         return request.headers["X-Real-Ip"]
-#     except:
-#         return util.get_remote_address()
+def getAddress():
+    try:
+        return request.headers["X-Real-Ip"]
+    except:
+        return util.get_remote_address()
 
-# cors = CORS(app=app, methods=["GET", "POST"])
-# limiter = Limiter(key_func=getAddress, app=app, default_limits=["500 per hours"], storage_options={})
+cors = CORS(app=app, methods=["GET", "POST"])
+limiter = Limiter(key_func=getAddress, app=app, default_limits=["500 per hours"], storage_options={})
 
 @app.route("/", methods=["GET"])
 def sendIndex():
